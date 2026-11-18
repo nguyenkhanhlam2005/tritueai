@@ -186,36 +186,35 @@ export function ExportHtmlModal({
           {activeTab === 'deploy' ? (
             <div className="space-y-4 text-sm text-slate-700">
               <div className="p-3.5 rounded-xl bg-sky-50 border border-sky-200 text-xs text-sky-900 leading-relaxed">
-                Để nộp <strong>1 trang web riêng</strong> mà phần <strong>Hỏi đáp Gemini AI</strong> hoạt động không bị lỗi <code className="font-mono font-semibold">404</code>, bạn cần đưa toàn bộ thư mục dự án (đã tích hợp sẵn cấu hình cho <strong>Vercel</strong> và <strong>Render</strong>) lên web host miễn phí thay vì chỉ tải 1 file HTML.
+                Để nộp <strong>1 trang web riêng</strong> mà phần <strong>Hỏi đáp Gemini AI</strong> hoạt động không bị lỗi <code className="font-mono font-semibold">404</code>, bạn cần đưa toàn bộ thư mục dự án (đã tích hợp sẵn cấu hình cho <strong>Netlify</strong>, <strong>Vercel</strong> và <strong>Render</strong>) lên web host miễn phí thay vì chỉ tải 1 file HTML.
               </div>
 
               <div className="space-y-3">
                 <div className="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
                   <p className="text-sm font-semibold text-slate-900">
-                    Cách A: Đưa lên Vercel (miễn phí, có link .vercel.app riêng)
+                    Cách A: Đưa lên Netlify (miễn phí, có link .netlify.app riêng)
                   </p>
                   <ol className="list-decimal list-inside space-y-1 text-xs text-slate-600 leading-relaxed">
-                    <li>Tải mã nguồn dự án (<strong>Download app</strong> hoặc đưa lên GitHub từ AI Studio).</li>
-                    <li>Vào <strong>vercel.com</strong> → <strong>Add New Project</strong> → chọn thư mục/repo dự án (đã có sẵn file <code className="font-mono">vercel.json</code> và <code className="font-mono">api/chat.ts</code>).</li>
-                    <li>Trong mục <strong>Environment Variables</strong>, thêm biến <code className="font-mono font-semibold text-slate-800">GEMINI_API_KEY</code> rồi nhấn <strong>Deploy</strong>.</li>
+                    <li>Đẩy mã nguồn mới nhất từ AI Studio lên GitHub (đã có sẵn <code className="font-mono">netlify.toml</code> và <code className="font-mono">netlify/functions/</code>).</li>
+                    <li>Vào <strong>app.netlify.com</strong> → <strong>Add new site → Import an existing project</strong> → chọn kho GitHub.</li>
+                    <li>Mở <strong>Site configuration → Environment variables</strong>, thêm <code className="font-mono font-semibold text-slate-800">GEMINI_API_KEY</code> rồi nhấn <strong>Deploy site</strong>.</li>
                   </ol>
                 </div>
 
                 <div className="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
                   <p className="text-sm font-semibold text-slate-900">
-                    Cách B: Đưa lên Render (miễn phí, có link .onrender.com riêng)
+                    Cách B: Đưa lên Vercel (miễn phí, có link .vercel.app riêng)
                   </p>
                   <ol className="list-decimal list-inside space-y-1 text-xs text-slate-600 leading-relaxed">
-                    <li>Đưa mã nguồn dự án lên GitHub.</li>
-                    <li>Vào <strong>render.com</strong> → <strong>New Web Service</strong> (dự án đã có sẵn <code className="font-mono">render.yaml</code>).</li>
-                    <li>Build Command: <code className="font-mono">npm install &amp;&amp; npm run build</code> · Start Command: <code className="font-mono">npm start</code>.</li>
-                    <li>Thêm biến môi trường <code className="font-mono font-semibold text-slate-800">GEMINI_API_KEY</code> rồi nhấn <strong>Deploy</strong>.</li>
+                    <li>Tải mã nguồn dự án hoặc đẩy lên GitHub (đã có sẵn <code className="font-mono">vercel.json</code> và <code className="font-mono">api/chat.ts</code>).</li>
+                    <li>Vào <strong>vercel.com</strong> → <strong>Add New... → Project</strong> → chọn kho GitHub.</li>
+                    <li>Trong mục <strong>Environment Variables</strong>, thêm <code className="font-mono font-semibold text-slate-800">GEMINI_API_KEY</code> rồi nhấn <strong>Deploy</strong>.</li>
                   </ol>
                 </div>
               </div>
 
               <p className="text-xs text-slate-500 leading-relaxed">
-                Mẹo: Sau khi có link Vercel hoặc Render của riêng bạn, bạn có thể mở trực tiếp link đó làm trang web nộp bài, hoặc dán link đó vào tab <strong>Tải 1 file HTML tĩnh</strong> để file HTML kết nối về máy chủ riêng của bạn.
+                Mẹo: Sau khi có link Netlify hoặc Vercel của riêng bạn, bạn có thể mở trực tiếp link đó làm trang web nộp bài, hoặc dán link đó vào tab <strong>Tải 1 file HTML tĩnh</strong> để file HTML kết nối về máy chủ riêng của bạn.
               </p>
             </div>
           ) : (
