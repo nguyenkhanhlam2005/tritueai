@@ -1,0 +1,6 @@
+{
+  "name": "Trí Tuệ AI",
+  "description": "idk AI – Trợ lý AI học tập dành cho học sinh THCS hỗ trợ Toán, Ngữ văn, Tiếng Anh, Khoa học, Lịch sử và Địa lý.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
